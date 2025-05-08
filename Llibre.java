@@ -21,6 +21,18 @@ public class Llibre {
         return prestat;
     }
 
+    public void setTitol(String titol) {
+        this.titol = titol;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public void setPrestat(boolean prestat) {
+        this.prestat = prestat;
+    }
+
     @Override
     public String toString() {
         return titol + " de " + autor + (prestat ? " (En préstec)" : " (Disponible)");
