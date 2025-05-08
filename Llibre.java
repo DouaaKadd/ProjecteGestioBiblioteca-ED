@@ -2,10 +2,12 @@ public class Llibre {
     private String titol;
     private String autor;
     private boolean prestat;
+    private String categoria;
 
-    public Llibre(String titol, String autor) {
+     public Llibre(String titol, String autor, String categoria) {
         this.titol = titol;
         this.autor = autor;
+        this.categoria = categoria;
         this.prestat = false;
     }
 
@@ -21,6 +23,10 @@ public class Llibre {
         return prestat;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
     public void setTitol(String titol) {
         this.titol = titol;
     }
@@ -33,8 +39,12 @@ public class Llibre {
         this.prestat = prestat;
     }
 
-    @Override
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+   @Override
     public String toString() {
-        return titol + " de " + autor + (prestat ? " (En préstec)" : " (Disponible)");
+        return titol + " de " + autor + " (" + categoria + ")" + (prestat ? " (En préstec)" : " (Disponible)");
     }
 }

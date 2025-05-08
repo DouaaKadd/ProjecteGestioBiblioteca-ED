@@ -24,7 +24,9 @@ public class Main {
                     String titolNou = scanner.nextLine();
                     System.out.print("Autor: ");
                     String autorNou = scanner.nextLine();
-                    biblioteca.afegirLlibre(new Llibre(titolNou, autorNou));
+                    System.out.print("Categoria: ");
+                    String categoriaNou = scanner.nextLine();
+                    biblioteca.afegirLlibre(new Llibre(titolNou, autorNou, categoriaNou));
                     break;
                 case 2:
                     System.out.print("Títol del llibre a modificar: ");
@@ -35,8 +37,11 @@ public class Main {
                         String nouTitol = scanner.nextLine();
                         System.out.print("Nou autor: ");
                         String nouAutor = scanner.nextLine();
+                        System.out.print("Nova categoria: ");
+                        String novaCategoria = scanner.nextLine();
                         llibreModificar.setTitol(nouTitol);
                         llibreModificar.setAutor(nouAutor);
+                        llibreModificar.setCategoria(novaCategoria);
                     } else {
                         System.out.println("Llibre no trobat.");
                     }
@@ -52,16 +57,12 @@ public class Main {
                         System.out.println("Llibre no trobat.");
                     }
                     break;
-               case 4:
+                case 4:
                     if (biblioteca.getLlibres().isEmpty()) {
                         System.out.println("No hi ha llibres.");
                     } else {
                         for (Llibre l : biblioteca.getLlibres()) {
-                            if (l.esPrestat()) {
-                                System.out.println(l + " (En préstec)");
-                            } else {
-                                System.out.println(l + " (Disponible)");
-                            }
+                            System.out.println(l);
                         }
                     }
                     break;
