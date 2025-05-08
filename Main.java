@@ -6,6 +6,11 @@ public class Main {
         Biblioteca biblioteca = new Biblioteca();
         boolean sortir = false;
 
+        System.out.println("Digues el teu nom d'usuari:");
+        String nom = scanner.next();
+
+        Usuari usuari = new Usuari(nom);
+
         int opcio;
         while (!sortir) {
             System.out.println("\n=== MENÚ DE GESTIÓ DE LLIBRES ===");
@@ -13,6 +18,7 @@ public class Main {
             System.out.println("2. Modificar llibre");
             System.out.println("3. Eliminar llibre");
             System.out.println("4. Mostrar llibres");
+            System.out.println("5. Consultar historial de préstecs");
             System.out.println("0. Sortir");
             System.out.print("Opció: ");
             opcio = scanner.nextInt();
@@ -65,6 +71,9 @@ public class Main {
                             System.out.println(l);
                         }
                     }
+                    break;
+                case 5:
+                    usuari.mostrarHistorial();
                     break;
                 case 0:
                     sortir = true;
