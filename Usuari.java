@@ -4,6 +4,8 @@ import java.util.List;
 public class Usuari {
 private String nom;
 private List<Llibre> llibresPrestats;
+private List<Llibre> historial;
+
 
 public Usuari(String nom) {
 this.nom = nom;
@@ -21,4 +23,8 @@ public void afegirLlibre(Llibre llibre) {
 public void retornarLlibre(Llibre llibre) { 
     llibresPrestats.remove(llibre); 
 }
+
+public void afegirAlHistorial (Llibre llibre) {
+    historial.add(llibre);
+    }
 }
