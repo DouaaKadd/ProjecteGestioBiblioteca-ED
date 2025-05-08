@@ -52,12 +52,16 @@ public class Main {
                         System.out.println("Llibre no trobat.");
                     }
                     break;
-                case 4:
+               case 4:
                     if (biblioteca.getLlibres().isEmpty()) {
                         System.out.println("No hi ha llibres.");
                     } else {
                         for (Llibre l : biblioteca.getLlibres()) {
-                            System.out.println(l);
+                            if (l.esPrestat()) {
+                                System.out.println(l + " (En préstec)");
+                            } else {
+                                System.out.println(l + " (Disponible)");
+                            }
                         }
                     }
                     break;
