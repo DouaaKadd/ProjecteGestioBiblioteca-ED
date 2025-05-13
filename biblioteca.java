@@ -35,8 +35,6 @@ public class Biblioteca {
         }
         return false; 
     }
-
-    // Devolver un libro
     public void retornarLlibre(Lector lector, String titol) {
         Llibre llibre = null;
         for (Llibre l : lector.getLlibresPrestats()) {
